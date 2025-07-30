@@ -27,3 +27,5 @@
 ### Step 2: Define custom data generator
 ### Step 3: Define the 3D U-net model
 ### Step 4: Train and Predict
+
+## View More detailed: https://snehpatel38.github.io/BraTS_segmentation_Using_3D_UNet/
