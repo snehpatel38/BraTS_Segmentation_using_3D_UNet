@@ -1,9 +1,9 @@
 # BraTS_segmentation_Using_3D_UNet
 
 
-## All BraTS multimodal scans are available as NIfTI files (.nii.gz) -> commonly used medical imaging format to store brain imagin data obtained using MRI and describe different MRI settings
+### All BraTS multimodal scans are available as NIfTI files (.nii.gz) -> commonly used medical imaging format to store brain imagin data obtained using MRI and describe different MRI settings
 
-## DataSet Link - https://www.kaggle.com/datasets/awsaf49/brats20-dataset-training-validation
+### DataSet Link - https://www.kaggle.com/datasets/awsaf49/brats20-dataset-training-validation
 
 ### Dataset Info:-
 #### Multimodal scans are available as NIfTI files (.nii.gz)
@@ -28,4 +28,4 @@
 ### Step 3: Define the 3D U-net model
 ### Step 4: Train and Predict
 
-## View More detailed: https://snehpatel38.github.io/BraTS_segmentation_Using_3D_UNet/
+### View More detailed: https://snehpatel38.github.io/BraTS_segmentation_Using_3D_UNet/
