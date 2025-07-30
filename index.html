@@ -44,16 +44,14 @@
   </p>
 
   <h2>🧠 Procedure</h2>
-  <ol>
-  <li><strong>Data Loading:</strong> Loaded multimodal BraTS MRI scans (FLAIR, T1ce, T2) using <code>nibabel</code> from:
-    <br><code>BraTS2020_TrainingData/MICCAI_BraTS2020_TrainingData/</code></li>
+  <ul>
+    
+  <li><strong>Step 1: Data Loading:</strong> Loaded multimodal BraTS MRI scans (FLAIR, T1ce, T2) using <code>nibabel</code> from:
 
-  <li><strong>Preprocessing:</strong> Normalized MRI volumes with <code>MinMaxScaler</code>, and converted segmentation masks (reassigned label 4 → 3).</li>
+  <li><strong>Preprocessing:</strong> Normalized MRI volumes with <code>MinMaxScaler</code></li>
 
-  <li><strong>Volume Cropping:</strong> Cropped all 3D images to shape <code>128×128×128</code> for efficient patch training.
-    <br>Saved output as <code>.npy</code> files into:
-    <br><code>BraTS2020_TrainingData/input_data_3channels/images/</code>
-    <br><code>BraTS2020_TrainingData/input_data_3channels/masks/</code></li>
+  <li><strong>Volume Cropping:</strong> Original shape <code>240*240*155</code> So, Cropped all 3D images to shape <code>128*128*128</code> for efficient patch training.
+    <br>Saved output as <code>.npy</code> files.
 
   <li><strong>Volume Filtering:</strong> Skipped volumes where the tumor occupied &lt; 1% of the total mask volume.</li>
 
@@ -75,18 +73,17 @@
     Approaches used:
     <ul>
       <li>Extend 2D U-Net into 3D using <code>Conv3D</code>, <code>MaxPooling3D</code>, and <code>UpSampling3D</code></li>
-      <li>OR use available open-source 3D segmentation models</li>
     </ul>
   </li>
 
   <li><strong>Step 4: Train and Predict</strong><br>
     <ul>
       <li>Trained the model using batches from the custom data generator</li>
-      <li>Evaluated Dice score and loss</li>
+      <li>Evaluated Dice score and Categorical Focal loss</li>
       <li>Visualized predictions using <code>matplotlib</code> for random 2D slices</li>
     </ul>
   </li>
-</ol>
+</ul>
 
 
   <h2>📊 Results & Graphs</h2>
@@ -96,7 +93,13 @@
 
   <h3>Predicted Tumor Segmentation</h3>
   <img src="https://raw.githubusercontent.com/snehpatel38/BraTS_segmentation_Using_3D_UNet/main/result/pred_1.png" alt="Tumor Segmentation Output">
-  <img src="https://raw.githubusercontent.com/snehpatel38/BraTS_segmentation_Using_3D_UNet/main/result/pred_2.png" alt="Tumor Segmentation Output">
+  <img src="https://raw.githubusercontent.com/snehpatel38/BraTS_segmentation_Using_3D_UNet/main/result/pred_2.png" alt="Tumor Segmentation Output"
+    >
+  <h3>Training vs Validation Loss </h3>
+  <img src="https://raw.githubusercontent.com/snehpatel38/BraTS_segmentation_Using_3D_UNet/main/result/train_vs_val_loss.png" alt="Loss Graph">
+  
+  <h3>Training vs Validation Accuracy </h3>
+  <img src="https://raw.githubusercontent.com/snehpatel38/BraTS_segmentation_Using_3D_UNet/main/result/train_vs_val_accuracy.png" alt="Accuracy Graph">
 
   <footer>
     Created by Sneh Patel | <a href="https://github.com/snehpatel38">GitHub Profile</a>
