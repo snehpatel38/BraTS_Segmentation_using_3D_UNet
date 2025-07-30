@@ -1,31 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>BraTS Segmentation Using 3D UNet</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 15px auto;
+      border: 1px solid #ccc;
+    }
+    ol {
+      padding-left: 20px;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
 
   <h1>BraTS Segmentation Using 3D UNet</h1>
-  <p><a href="https://github.com/snehpatel38/BraTS_segmentation_Using_3D_UNet" target="_blank">View on GitHub</a></p>
+  <p style="text-align: center;">
+    <a href="https://github.com/snehpatel38/BraTS_segmentation_Using_3D_UNet" target="_blank">View Project on GitHub</a>
+  </p>
 
-  <h2>Procedure</h2>
+  <h2>🧠 Procedure</h2>
   <ol>
-    <li>Downloaded the BraTS 3D MRI dataset.</li>
-    <li>Preprocessed the data (normalization, resizing, etc.).</li>
-    <li>Built a 3D UNet model using PyTorch.</li>
-    <li>Trained the model using Dice loss function.</li>
-    <li>Evaluated the results and visualized predictions.</li>
+    <li>Downloaded BraTS 3D MRI dataset.</li>
+    <li>Preprocessed the data (normalization, resizing).</li>
+    <li>Implemented 3D UNet using PyTorch.</li>
+    <li>Trained with Dice Loss for segmentation task.</li>
+    <li>Evaluated with Dice Score and visualized outputs.</li>
   </ol>
 
-  <h2>Results and Prediction Graphs</h2>
+  <h2>📊 Results & Graphs</h2>
 
-  <h3>Dice Loss Over Epochs</h3>
-  <img src="https://raw.githubusercontent.com/snehpatel38/BraTS_segmentation_Using_3D_UNet/main/assets/dice_loss_plot.png" alt="Dice Loss Plot">
+  <h3>Training</h3>
+  <img src="https://raw.githubusercontent.com/snehpatel38/BraTS_segmentation_Using_3D_UNet/main/result/training.png" alt="Dice Loss Graph">
 
-  <h3>Predicted Tumor Segmentation Slice</h3>
-  <img src="https://raw.githubusercontent.com/snehpatel38/BraTS_segmentation_Using_3D_UNet/main/assets/prediction_slice.png" alt="Prediction Slice">
+  <h3>Predicted Tumor Segmentation</h3>
+  <img src="https://raw.githubusercontent.com/snehpatel38/BraTS_segmentation_Using_3D_UNet/main/result/pred_1.png" alt="Tumor Segmentation Output">
+  <img src="https://raw.githubusercontent.com/snehpatel38/BraTS_segmentation_Using_3D_UNet/main/result/pred_2.png" alt="Tumor Segmentation Output">
 
-  <p>Created by Sneh Patel</p>
+  <footer>
+    Created by Sneh Patel | <a href="https://github.com/snehpatel38">GitHub Profile</a>
+  </footer>
 
 </body>
 </html>
