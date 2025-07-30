@@ -23,7 +23,7 @@
 #### - Label 4: GD-enhancing tumor (ET)
 
 ## Approach (High Level):
-Step 1: Get the data ready 
-Step 2: Define custom data generator
-Step 3: Define the 3D U-net model
-Step 4: Train and Predict
+### Step 1: Get the data ready 
+### Step 2: Define custom data generator
+### Step 3: Define the 3D U-net model
+### Step 4: Train and Predict
