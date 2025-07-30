@@ -45,12 +45,49 @@
 
   <h2>🧠 Procedure</h2>
   <ol>
-    <li>Downloaded BraTS 3D MRI dataset.</li>
-    <li>Preprocessed the data (normalization, resizing).</li>
-    <li>Implemented 3D UNet using PyTorch.</li>
-    <li>Trained with Dice Loss for segmentation task.</li>
-    <li>Evaluated with Dice Score and visualized outputs.</li>
-  </ol>
+  <li><strong>Data Loading:</strong> Loaded multimodal BraTS MRI scans (FLAIR, T1ce, T2) using <code>nibabel</code> from:
+    <br><code>BraTS2020_TrainingData/MICCAI_BraTS2020_TrainingData/</code></li>
+
+  <li><strong>Preprocessing:</strong> Normalized MRI volumes with <code>MinMaxScaler</code>, and converted segmentation masks (reassigned label 4 → 3).</li>
+
+  <li><strong>Volume Cropping:</strong> Cropped all 3D images to shape <code>128×128×128</code> for efficient patch training.
+    <br>Saved output as <code>.npy</code> files into:
+    <br><code>BraTS2020_TrainingData/input_data_3channels/images/</code>
+    <br><code>BraTS2020_TrainingData/input_data_3channels/masks/</code></li>
+
+  <li><strong>Volume Filtering:</strong> Skipped volumes where the tumor occupied &lt; 1% of the total mask volume.</li>
+
+  <li><strong>Train/Validation Split:</strong> Used <code>splitfolders</code> to split data into 75% training and 25% validation.
+    <br>Output saved in:
+    <br><code>BraTS2020_TrainingData/input_data_128/</code></li>
+
+  <li><strong>Step 2: Define Custom Data Generator</strong><br>
+    Keras' default <code>ImageDataGenerator</code> does not support <code>.npy</code> files.
+    <br>Implemented a custom Python generator that:
+    <ul>
+      <li>Loads 3D MRI volumes and masks from disk</li>
+      <li>Applies shuffling and batching</li>
+      <li>Yields (X, y) batches for training</li>
+    </ul>
+  </li>
+
+  <li><strong>Step 3: Define the 3D U-Net Model</strong><br>
+    Approaches used:
+    <ul>
+      <li>Extend 2D U-Net into 3D using <code>Conv3D</code>, <code>MaxPooling3D</code>, and <code>UpSampling3D</code></li>
+      <li>OR use available open-source 3D segmentation models</li>
+    </ul>
+  </li>
+
+  <li><strong>Step 4: Train and Predict</strong><br>
+    <ul>
+      <li>Trained the model using batches from the custom data generator</li>
+      <li>Evaluated Dice score and loss</li>
+      <li>Visualized predictions using <code>matplotlib</code> for random 2D slices</li>
+    </ul>
+  </li>
+</ol>
+
 
   <h2>📊 Results & Graphs</h2>
 
