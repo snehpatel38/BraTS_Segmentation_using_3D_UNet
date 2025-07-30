@@ -157,9 +157,10 @@
   </section>
 
   <section>
-    <h2>📊 Results</h2>
+    <h2>📊 Results : 6GB rtx 3050 - 10 Epochs</h2>
     <h3>Training Loss</h3>
     <img src="https://raw.githubusercontent.com/snehpatel38/BraTS_segmentation_Using_3D_UNet/main/result/training.png" alt="Dice Loss Graph">
+    <h3>Mean IoU: 61.34 (10 Epochs)</h3>
 
     <h3>Prediction Samples</h3>
     <img src="https://raw.githubusercontent.com/snehpatel38/BraTS_segmentation_Using_3D_UNet/main/result/pred_1.png" alt="Predicted Tumor">
@@ -171,6 +172,14 @@
     <h3>Training vs Validation Accuracy</h3>
     <img src="https://raw.githubusercontent.com/snehpatel38/BraTS_segmentation_Using_3D_UNet/main/result/train_vs_val_accuracy.png" alt="Accuracy Comparison">
   </section>
+
+      <h2>📌 Future Improvements</h2>
+  <ul>
+    <li>Training the model for more epochs could further improve segmentation accuracy and stability.</li>
+    <li>Experimenting with advanced loss functions such as Dice + Focal Loss or Tversky Loss may enhance performance on complex tumor structures.</li>
+    <li>Currently, only the training set (~30 GB) was used and split into training and validation. Future work can utilize the full BraTS dataset (including the validation and testing sets) for more robust training and evaluation.</li>
+  </ul>
+
 
   <footer>
     Created by Sneh Patel | <a href="https://github.com/snehpatel38" target="_blank">Visit GitHub Profile</a>
