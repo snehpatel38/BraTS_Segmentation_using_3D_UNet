@@ -28,4 +28,10 @@
 ### Step 3: Define the 3D U-net model
 ### Step 4: Train and Predict
 
+### Reference:
+#### - https://arxiv.org/abs/1606.06650
+#### - [Youtube: ](https://www.youtube.com/@DigitalSreeni)
+#### - https://realpython.com/introduction-to-python-generators/
+#### - Focal and dice loss works better together - https://academic.oup.com/bioinformaticsadvances/article/4/1/vbae169/7907198
+
 ### View More detailed: https://snehpatel38.github.io/BraTS_segmentation_Using_3D_UNet/
