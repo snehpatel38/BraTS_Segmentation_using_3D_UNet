@@ -13,14 +13,17 @@
 #### - T2-weighted (T2)
 #### - T2 Fluid Attenuated Inversion Recovery (FLAIR) volumes
 
-## T1: T1-weighted, native image, sagittal or axial 2D acquisitions, with 1–6 mm slice thickness.
-## T1c: T1-weighted, contrast-enhanced (Gadolinium) image, with 3D acquisition and 1 mm isotropic voxel size for most patients.
-## T2: T2-weighted image, axial 2D acquisition, with 2–6 mm slice thickness.
-##FLAIR: T2-weighted FLAIR image, axial, coronal, or sagittal 2D acquisitions, 2–6 mm slice thickness.
+## All the imaging datasets have been segmented manually and were approved by experienced neuro-radiologists. 
 
+### Annotations (labels): 
+#### - Label 0: Unlabeled volume
+#### - Label 1: Necrotic and non-enhancing tumor core (NCR/NET)
+#### - Label 2: Peritumoral edema (ED)
+#### - Label 3: Missing (No pixels in all the volumes contain label 3)
+#### - Label 4: GD-enhancing tumor (ET)
 
-## get_data_ready.py
-### Load sample images and visualize
-### Includes, dividing each image by its max to scale them to [0,1]
-###Converting mask from float to uint8
-### Changing mask pixel values (labels) from 4 to 3 (as the original labels are 0, 1, 2, 4)
+## Approach (High Level):
+Step 1: Get the data ready 
+Step 2: Define custom data generator
+Step 3: Define the 3D U-net model
+Step 4: Train and Predict
